@@ -1,0 +1,182 @@
+:root {
+    --black: #000;
+}
+
+body {
+    margin: 0;
+    background: url(https://wallpaperaccess.com/full/345774.png);
+    background-size: cover;
+    text-align: center;
+    color: #FFF;
+}
+
+input {
+    margin: 5px 0 5px 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+    transition: transform 0.5s;
+    box-shadow: 0 0 5px 2px var(--black);
+    border: 1px solid var(--black);
+    border-radius: 5px;
+}
+
+.wrapper > * {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    padding: 30px;
+}
+
+.wrapper > div:hover .blur {
+    opacity: 0;
+}
+
+.wrapper div p {
+    background: #FFF;
+    padding: 10px 20px 10px 20px;
+    mix-blend-mode: screen;
+    color: #555;
+    text-shadow: 0 0 5px #333;
+    font-family: cursive;
+    font-size: 40px;
+    font-weight: 999;
+}
+
+.wrapper div p:not(.two p):not(.six p)::before {
+    position: relative;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 50px;
+    margin: 0 5px 0 0;
+    border-bottom: 1px solid #000;
+}
+
+.wrapper div p:not(.two p):not(.six p)::after {
+    position: relative;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 50px;
+    margin: 0 0 0 5px;
+    border-bottom: 1px solid #000;
+}
+
+.two p::before {
+    position: relative;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    margin: 0 5px 0 0;
+    border-bottom: 1px solid #000;
+}
+
+.two p::after {
+    position: relative;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    margin: 0 0 0 5px;
+    border-bottom: 1px solid #000;
+}
+
+.blur {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+.wrapper div:hover {
+    cursor: pointer;
+}
+
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100%, auto);
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+input:checked + .wrapper {
+    transform: rotate(45deg) scale(0.5);
+}
+
+.one {
+    position: relative;
+    background: url(https://wallpaperaccess.com/full/881743.jpg);
+    background-size: cover;
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+}
+
+.two {
+    background: url(https://wallpapercave.com/wp/wp5582256.jpg);
+    background-size: cover;
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+}
+
+.three {
+    background: url(https://wallpaperaccess.com/full/2536362.jpg);
+    background-size: cover;
+    grid-column: 5 / 7;
+}
+
+.four {
+    background: url(https://r1.ilikewallpaper.net/iphone-wallpapers/download/101439/neon-abyss-iphone-wallpaper-ilikewallpaper_com.jpg) center;
+    background-size: cover;
+}
+
+.five {
+    background: url(https://wallpapercave.com/wp/wp5144236.jpg) center;
+    background-size: cover;
+}
+
+.six {
+    background: url(https://free4kwallpapers.com/uploads/originals/2020/07/27/samurai-jack-wallpaper.jpg) center;
+    background-size: cover;
+    grid-column: 3 / 7;
+}
+
+.six p::before {
+    position: relative;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 100px;
+    margin: 0 5px 0 0;
+    border-bottom: 1px solid #000;
+}
+
+.six p::after {
+    position: relative;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 100px;
+    margin: 0 0 0 5px;
+    border-bottom: 1px solid #000;
+}
